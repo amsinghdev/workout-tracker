@@ -49,6 +49,36 @@
       "date": "2018-9-1",
       "distance": "2000",
       "id": 8
+    },
+    {
+      "date": "2020-3-25",
+      "distance": "600",
+      "type": "row",
+      "id": 9
+    },
+    {
+      "rating": 4,
+      "type": "row",
+      "date": "2020-4-15",
+      "time": {
+        "hour": 7,
+        "minute": 0,
+        "second": 0
+      },
+      "distance": "32",
+      "id": 10
+    },
+    {
+      "rating": 4,
+      "type": "bike",
+      "date": "2020-4-17",
+      "time": {
+        "hour": 8,
+        "minute": 0,
+        "second": 0
+      },
+      "distance": "45",
+      "id": 11
     }
   ],
   "locations": [

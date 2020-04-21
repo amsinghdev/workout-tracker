@@ -6,7 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 // third party imports
 import { NgxLoadingModule } from 'ngx-loading';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbDateAdapter, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // App imports
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { EntryEditorComponent } from './entry-editor/entry-editor.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 import {WorkoutApiService} from './services/workout-api.service';
+import {DateStringAdapterService} from './services/date-string-adapter.service';
 
 
 
@@ -36,7 +37,10 @@ import {WorkoutApiService} from './services/workout-api.service';
     FormsModule,
     NgbModule
   ],
-  providers: [WorkoutApiService],
+  providers: [
+    WorkoutApiService,
+    {provide: NgbDateAdapter, useClass: DateStringAdapterService}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

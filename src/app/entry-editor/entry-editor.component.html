@@ -8,24 +8,55 @@
         <div class="form-group row">
           <label class="col-form-label col-sm-2">Type:</label>
           <div class="col-sm-6">
-            <select class="form-control" name="wtype" [(ngModel)]="workout.type">
+            <!--  < select class="form-control" name="wtype" [(ngModel)]="workout.type">
               <option value="">(Select)</option>
               <option value="bike">Bike</option>
               <option value="run">Run</option>
               <option value="row">Row</option>
-            </select>
+            </select> -->
+            <!-- ng bootstrap Radio buttons use -->
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="wtype" [(ngModel)]="workout.type">
+              <label class="btn-primary" ngbButtonLabel> <input type="radio" ngbButton value="bike">Bike</label>
+              <label class="btn-primary" ngbButtonLabel><input type="radio" ngbButton value="run"> Run</label>
+              <label class="btn-primary" ngbButtonLabel><input type="radio" ngbButton value="row">Row</label>
+            </div>
           </div>
         </div>
 
         <div class="form-group row">
           <label class="col-form-label col-sm-2">Date:</label>
           <div class="col-sm-3">
-            <input type="text" class="form-control" name="wdate" [(ngModel)]="workout.date" />
-            <!-- <ngb-datepicker #d name="wdate" [(ngModel)]="workout.date"
+           <!-- <input type="text" class="form-control" name="wdate" [(ngModel)]="workout.date" />
+             <ngb-datepicker #d name="wdate" [(ngModel)]="workout.date"
                 [startDate]="startDate" [maxDate]="maxDate"></ngb-datepicker> -->
+            <!-- DatePicker demo-->
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd" name="wdate" [(ngModel)]="workout.date" [maxDate]="maxDate"
+                     ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-info calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
           </div>
         </div>
-
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">Time:</label>
+          <div class="col-sm-3">
+            <!-- <input type="text" class="form-control" name="wdistance" [(ngModel)]="workout.distance" /> -->
+            <ngb-timepicker name="tp" [(ngModel)]="workout.time" [meridian]="true" [minuteStep]="15"></ngb-timepicker>
+          </div>
+        </div>
+        <!--  Rating demo-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">Quality:</label>
+          <div class="col-sm-3">
+            <ngb-rating [(rate)]="workout.rating" max="5">
+              <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+              </ng-template>
+            </ngb-rating>
+          </div>
+        </div>
         <div class="form-group row">
           <label class="col-form-label col-sm-2">Distance:</label>
           <div class="col-sm-3">
