@@ -7,6 +7,16 @@
     </div>
     <div class="card-body">
       <button class="btn btn-sm btn-primary mr-sm-2">Set Performance Targets</button>
+      <button class="btn btn-sm" [ngClass]="isCollapsed ? 'btn-info' : 'btn-outline-info'"
+              (click)="isCollapsed = !isCollapsed">?</button>
+      <div class="mt-sm-2" [ngbCollapse]="!isCollapsed">
+        <div class="card">
+          <div class="card-body">
+            This will enable you to set performance target of each Activity and enables
+            you to set your goal of workout. Good Luck !!!
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -79,6 +79,14 @@
       },
       "distance": "45",
       "id": 11
+    },
+    {
+      "rating": 4,
+      "type": "run",
+      "date": "2020-4-21",
+      "location": "Neighborhood 1 mile course",
+      "distance": "12",
+      "id": 12
     }
   ],
   "locations": [

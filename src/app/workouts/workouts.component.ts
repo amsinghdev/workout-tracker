@@ -11,10 +11,12 @@ import * as _ from  'lodash';
 export class WorkoutsComponent implements OnInit {
   public loading = false;
   public workouts = [];
+  public isCollapsed;
   private _: any;
   constructor(private api: WorkoutApiService) { }
 
   ngOnInit() {
+    this.isCollapsed = false;
     this.loading = true;
     this.api.getWorkouts().subscribe(data => {
       this.workouts = data;
