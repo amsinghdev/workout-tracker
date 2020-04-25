@@ -11,9 +11,9 @@ export class WorkoutApiService {
     return this.http.get<any[]>(`${this.baseUrl}/workouts`);
   }
 
-  /*getWorkoutsPaged(currPage, pageSize) {
+  getWorkoutsPaged(currPage, pageSize) {
     return this.http.get<any[]>(`${this.baseUrl}/workouts?_page=${currPage}&_limit=${pageSize}`);
-  }*/
+  }
 
   getWorkout(id) {
     return this.http.get<any>(`${this.baseUrl}/workouts/${id}`);
@@ -44,6 +44,14 @@ export class WorkoutApiService {
   }
   searchLocations(searchTerm) {
     return this.http.get<any>(`${this.baseUrl}/locations?q=${searchTerm}`);
+  }
+
+  getPerfTargets() {
+    return this.http.get(`${this.baseUrl}/performanceTargets`);
+  }
+
+  savePerfTargets(perfTargets: any) {
+    return this.http.put(`${this.baseUrl}/performanceTargets`, perfTargets);
   }
 }
 

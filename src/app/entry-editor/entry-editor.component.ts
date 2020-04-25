@@ -17,6 +17,7 @@ export class EntryEditorComponent implements OnInit {
   public loading = false;
   public maxDate: NgbDateStruct;
   public locations = [];
+  public isDisDismissible = false;
   constructor(private router: ActivatedRoute,
               private nav: Router,
               private api: WorkoutApiService) {

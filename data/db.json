@@ -1,8 +1,8 @@
 {
   "performanceTargets": {
-    "bike": "1000",
-    "run": "2200",
-    "row": "1500"
+    "bike": "800",
+    "run": "2500",
+    "row": "3000"
   },
   "workouts": [
     {
@@ -67,26 +67,6 @@
       },
       "distance": "32",
       "id": 10
-    },
-    {
-      "rating": 4,
-      "type": "bike",
-      "date": "2020-4-17",
-      "time": {
-        "hour": 8,
-        "minute": 0,
-        "second": 0
-      },
-      "distance": "45",
-      "id": 11
-    },
-    {
-      "rating": 4,
-      "type": "run",
-      "date": "2020-4-21",
-      "location": "Neighborhood 1 mile course",
-      "distance": "12",
-      "id": 12
     }
   ],
   "locations": [
